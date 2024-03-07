@@ -34,7 +34,7 @@ class APIException:
         except ValueError:
             raise ConverterException(f'Не удалось обработать количество валюты: {amount}')
 
-        r = requests.get(f'https://v6.exchangerate-api.com/v6/e6a740ca02026bd49b92990b/pair/{quote_ticker}/{base_ticker}/{amount}')
+        r = requests.get(f'https://v6.exchangerate-api.com/v6//pair/{quote_ticker}/{base_ticker}/{amount}')
         conversion_result = json.loads(r.content)['conversion_result']
 
         return conversion_result
